@@ -11,6 +11,7 @@ const SingUp = () => {
         email:"",
         institution:"",
         age:"",
+        class:"",
         password_1:"",
         password_2:""
      })
@@ -45,7 +46,6 @@ const SingUp = () => {
     return (
         <div className="SingUpFrom">
              <br /> <br /> <br />
-      <br /> <br /> <br />
         <section class="vh-100">
           
         <div class="container h-100">
@@ -97,6 +97,16 @@ const SingUp = () => {
                             onChange={handleChange}
                             required/>
                             <label class="form-label" for="form3Example4cd">Age</label>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input type="number" id="form3Example4cd" class="form-control" 
+                            name="class"  value={newUser.class}
+                            onChange={handleChange}
+                            required/>
+                            <label class="form-label" for="form3Example4cd">Which class do you read?</label>
                           </div>
                         </div>
       

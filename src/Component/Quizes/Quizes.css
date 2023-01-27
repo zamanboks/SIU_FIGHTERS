@@ -1,0 +1,20 @@
+.quezimg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.inputstylee{
+    font-size: 25px;
+    font-weight: bold;
+}
+.radioInput{
+    font-size: 20px;
+  
+}
+.quiz{
+ 
+    background: url(../Image/KehlboAndSikbo\ bg.jpg) center/cover no-repeat;
+    height: 100%;
+  font-weight: bold;
+}

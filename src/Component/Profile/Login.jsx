@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import axios from 'axios';
 import { NavLink } from "react-router-dom";
+import { userContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 const Login = () => {
+  const[login,setLogin]= useContext(userContext);
   const[profile,setProfile]= useState(0);
   const[profileDoc,setProfileDoc]= useState(false);
   const[loginpage,setLoginpage]=useState(false)
@@ -25,7 +27,7 @@ const Login = () => {
      
       if(username&&password_1){
           axios.post('http://localhost:5000/Singup/login',newUser )
-          .then(res=>((res.data.error)? alert(res.data.error) : (alert(res.data.message), setProfile(true),  sessionStorage.setItem('username', username),sessionStorage.setItem("Token",res.data.access_token),console.log(res))));
+          .then(res=>((res.data.error)? alert(res.data.error) : (alert(res.data.message), setProfile(true),  sessionStorage.setItem('username', username),setLogin(true),sessionStorage.setItem("Token",res.data.access_token),console.log(res))));
      
       }
       else {

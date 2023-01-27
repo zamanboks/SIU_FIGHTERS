@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import logo from '../Image/Bondu.jpg';
+import { userContext } from "../../App";
 
 import './Nexbar.css';
 const Nevbar = () => {
+    const[login,setLogin]= useContext(userContext);
     const logout = () => {
-      
+        setLogin(false)
         sessionStorage.clear();
       };
     return (
@@ -23,8 +25,8 @@ const Nevbar = () => {
                         <li class="nav-item">
                             <NavLink to="/" exact className="nav-link">Home </NavLink>
                         </li>
-                      
-                        <li class="nav-item">
+                       
+                {  (sessionStorage.getItem('username') || (login===true) )?(<> <li class="nav-item">
                             <NavLink to="/MozarSateSikho" exact className="nav-link">
                                 Mozar Sate Sikho
                             </NavLink>
@@ -35,16 +37,21 @@ const Nevbar = () => {
                             </NavLink>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Ami Shera</a>
+                        <NavLink to="/AmieShera" exact className="nav-link">
+                           Ami Shera
+                            </NavLink>
                         </li>
                         <li class="nav-item">
-                        <NavLink to="/SingUp" exact className="nav-link">
-                            Sign Up   </NavLink>
+                            <NavLink to="/Profile" exact className="nav-link">
+                               Profile
+                            </NavLink>
                         </li>
                         <li class="nav-item"   onClick={logout}>
                         <NavLink to="/" exact className="nav-link">
                            Logout  </NavLink>
-                        </li>
+                        </li></>): <NavLink to="/SingUp" exact className="nav-link">
+                            Sign Up   </NavLink>}
+                        
                     </ul>
                 </div>
             </div>

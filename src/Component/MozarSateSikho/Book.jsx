@@ -18,7 +18,7 @@ const Book = () => {
                         <div class="card">
                             <img class="card-img-top" src={math} alt="Card image cap" />
                             <div class="card-body">
-                                <NavLink to="/oneMathBook" exact > <a href="#" class="btn btn-primary">Read Now</a></NavLink>
+                                <NavLink to="/oneMathBook" exact > <a href="#" class="btn btn-primary">Read Book</a></NavLink>
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@ const Book = () => {
                             <img class="card-img-top" src={bangla} alt="Card image cap" />
                             <div class="card-body">
 
-                                <a href="#" class="btn btn-primary">Read Now</a>
+                            <NavLink to="/oneMathBook" exact > <a href="#" class="btn btn-primary">Read Book</a></NavLink>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@ const Book = () => {
                         <div class="card">
                             <img class="card-img-top" src={eng} alt="Card image cap" />
                             <div class="card-body">
-                                <a href="#" class="btn btn-primary">Read Now</a>
+                            <NavLink to="/oneMathBook" exact > <a href="#" class="btn btn-primary">Read Book</a></NavLink>
                             </div>
                         </div>
                     </div>

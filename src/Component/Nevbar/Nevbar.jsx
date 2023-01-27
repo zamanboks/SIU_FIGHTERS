@@ -4,9 +4,13 @@ import logo from '../Image/Bondu.jpg';
 
 import './Nexbar.css';
 const Nevbar = () => {
-
+    const logout = () => {
+      
+        sessionStorage.clear();
+      };
     return (
         <nav class="navbar navbar-expand-lg ">
+          
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <img src={logo} className="bondulogo" alt="" />
@@ -19,6 +23,7 @@ const Nevbar = () => {
                         <li class="nav-item">
                             <NavLink to="/" exact className="nav-link">Home </NavLink>
                         </li>
+                      
                         <li class="nav-item">
                             <NavLink to="/MozarSateSikho" exact className="nav-link">
                                 Mozar Sate Sikho
@@ -33,12 +38,20 @@ const Nevbar = () => {
                             <a class="nav-link">Ami Shera</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Profile</a>
+                        <NavLink to="/SingUp" exact className="nav-link">
+                            Sign Up   </NavLink>
+                        </li>
+                        <li class="nav-item"   onClick={logout}>
+                        <NavLink to="/" exact className="nav-link">
+                           Logout  </NavLink>
                         </li>
                     </ul>
                 </div>
             </div>
+      
         </nav>
+    
+   
     );
 };
 

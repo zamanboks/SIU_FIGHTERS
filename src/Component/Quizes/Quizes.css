@@ -11,10 +11,10 @@
 .radioInput{
     font-size: 20px;
   
+  
 }
 .quiz{
  
-    background: url(../Image/KehlboAndSikbo\ bg.jpg) center/cover no-repeat;
-    height: 100%;
+   font-weight: italic;
   font-weight: bold;
 }

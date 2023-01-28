@@ -1,4 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import img1 from "../Image/Quiz/Apple Add.jpeg";
 import img2 from "../Image/Quiz/Apple2.jpeg";
@@ -11,8 +13,9 @@ import img8 from "../Image/Quiz/MinVSMX.jpeg";
 import "./Quizes.css";
 let x =1;
 const Quizes = () => {
-    const[num,setNum]=useState(0);
   
+    const[num,setNum]=useState(0);
+  const[submit,notSubmit]=useState(false);
     const handleChange = ()=>{
         x+=1;
         setNum(x);
@@ -20,6 +23,7 @@ const Quizes = () => {
     }
     const handlesubmit=()=>{
         console.log(num)
+        alert('Succefully Submited')
       const number={
             totalNumber: num,
             name: sessionStorage.getItem('username'),
@@ -28,8 +32,13 @@ const Quizes = () => {
       }
         axios.post('http://localhost:5000/Singup/add', number )
         .then(res=>console.log(res.json()));
+        notSubmit(true)
     }
-   
+    let navigate = useNavigate();
+    useEffect(()=>{
+     
+      submit && navigate("/leaderboard", { replace: true });
+    },[submit])
       
 
     return (

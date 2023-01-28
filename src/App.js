@@ -17,6 +17,8 @@ import UserProfile from "./Component/UserProfile/UserProfile";
 import AmiShera from "./Component/AmiShera/AmiShera";
 import PlayQuiz from "./Component/AmiShera/PlayQuiz";
 import Quizes from "./Component/Quizes/Quizes";
+import LeardBoard from "./Component/LeaderBoard/LeardBoard";
+import Payment from "./Component/Payment/Payment.";
 export const userContext = createContext();
 function App() {
   const [login, setLogin] = useState(false);
@@ -35,7 +37,8 @@ function App() {
      <Route path="/Login" element={<Login/> }/>
      <Route path="/AmieShera" element={<AmiShera/> }/>
      <Route path="/PlayQuiz" element={<Quizes/> }/>
-  
+  <Route path="/leaderboard" element={<LeardBoard/>}/>
+  <Route path="/Payment" element={<Payment/> }/>
      <Route path="/Profile" element={<UserProfile/>}/>
     <Route path="/" element={<Home />} />
 
